@@ -1,0 +1,88 @@
+{
+  "split": "development",
+  "bootstrap_unit": "architecture",
+  "sampling": "Paired sampling with replacement within hidden-width strata, preserving each stratum's original size.",
+  "controlled_pairs": "Rebuilt in every resample: distinct original architectures, same hidden width, parameter min/max >= 0.90. Repeated architectures retain sampling multiplicity.",
+  "interval_method": "95% percentile bootstrap",
+  "seed": 5491,
+  "repeats": 2000,
+  "original_metrics": {
+    "original_nsc": {
+      "spearman_rho": 0.9697449744974498,
+      "tau_b": 0.8614141414141414,
+      "controlled_tau_b": 0.6222222222222222
+    },
+    "pb_nsc": {
+      "spearman_rho": 0.9758175817581758,
+      "tau_b": 0.8804040404040404,
+      "controlled_tau_b": 0.6333333333333333
+    },
+    "matrix_wise": {
+      "spearman_rho": 0.9758295829582958,
+      "tau_b": 0.8795959595959596,
+      "controlled_tau_b": 0.6333333333333333
+    }
+  },
+  "comparisons": {
+    "pb_minus_nsc": {
+      "spearman_rho": {
+        "observed_difference": 0.006072607260726004,
+        "valid_resamples": 2000,
+        "invalid_resamples": 0,
+        "percentile_95_interval": [
+          -0.0009256535702493517,
+          0.014442068155201361
+        ]
+      },
+      "tau_b": {
+        "observed_difference": 0.018989898989899,
+        "valid_resamples": 2000,
+        "invalid_resamples": 0,
+        "percentile_95_interval": [
+          0.0032586060590734434,
+          0.03511655330515018
+        ]
+      },
+      "controlled_tau_b": {
+        "observed_difference": 0.011111111111111072,
+        "valid_resamples": 2000,
+        "invalid_resamples": 0,
+        "percentile_95_interval": [
+          -0.04513438769337135,
+          0.08002312138728308
+        ]
+      }
+    },
+    "pb_minus_matrix_wise": {
+      "spearman_rho": {
+        "observed_difference": -1.2001200120015376e-05,
+        "valid_resamples": 2000,
+        "invalid_resamples": 0,
+        "percentile_95_interval": [
+          -0.0004442424675950296,
+          0.0004321990708981482
+        ]
+      },
+      "tau_b": {
+        "observed_difference": 0.0008080808080808133,
+        "valid_resamples": 2000,
+        "invalid_resamples": 0,
+        "percentile_95_interval": [
+          -0.0016323199347071408,
+          0.0036779918202120786
+        ]
+      },
+      "controlled_tau_b": {
+        "observed_difference": 0.0,
+        "valid_resamples": 2000,
+        "invalid_resamples": 0,
+        "percentile_95_interval": [
+          -0.05161290322580647,
+          0.052097039473684166
+        ]
+      }
+    }
+  },
+  "elapsed_seconds": 14.11825260000478,
+  "limitations": "Exploratory uncertainty conditional on this archive and its width composition; not training-seed uncertainty, causal evidence or independent-benchmark validation."
+}

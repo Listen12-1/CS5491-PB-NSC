@@ -1,0 +1,344 @@
+{
+  "split": "development",
+  "architectures": 100,
+  "repeats_per_method": 7,
+  "python_version": "3.13.12",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "processor_reported_by_python": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",
+  "timing_protocol": "Each method and repeat runs in a fresh Python process. Scoring timer excludes imports, data loading, validation and process startup. MP cache reuse within each 100-architecture batch is allowed.",
+  "summaries": {
+    "original_nsc": {
+      "successful_runs": 7,
+      "median_scoring_seconds": 0.4992822999993223,
+      "min_scoring_seconds": 0.49672260000079405,
+      "max_scoring_seconds": 0.5026951000036206,
+      "median_ms_per_architecture": 4.992822999993223,
+      "ratio_to_nsc": 1.0
+    },
+    "attention_only": {
+      "successful_runs": 7,
+      "median_scoring_seconds": 0.5003352999992785,
+      "min_scoring_seconds": 0.4978992000033031,
+      "max_scoring_seconds": 0.5053951000008965,
+      "median_ms_per_architecture": 5.003352999992785,
+      "ratio_to_nsc": 1.0021090272976985
+    },
+    "ffn_only": {
+      "successful_runs": 7,
+      "median_scoring_seconds": 0.5012975999998162,
+      "min_scoring_seconds": 0.49883930000214605,
+      "max_scoring_seconds": 0.5046287000004668,
+      "median_ms_per_architecture": 5.012975999998162,
+      "ratio_to_nsc": 1.0040363938407122
+    },
+    "matrix_wise": {
+      "successful_runs": 7,
+      "median_scoring_seconds": 0.5026283000042895,
+      "min_scoring_seconds": 0.5000809000048321,
+      "max_scoring_seconds": 0.5053840999971726,
+      "median_ms_per_architecture": 5.026283000042895,
+      "ratio_to_nsc": 1.0067016195145948
+    },
+    "pb_nsc": {
+      "successful_runs": 7,
+      "median_scoring_seconds": 0.5027477999974508,
+      "min_scoring_seconds": 0.49903440000343835,
+      "max_scoring_seconds": 0.5051444000055199,
+      "median_ms_per_architecture": 5.027477999974508,
+      "ratio_to_nsc": 1.006940963054635
+    }
+  },
+  "failures": [],
+  "raw_runs": {
+    "original_nsc": [
+      {
+        "method": "original_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.501861500000814,
+        "score_sum": 301861.9607443095,
+        "repetition": 1,
+        "process_seconds": 0.6648075999983121
+      },
+      {
+        "method": "original_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.4988420000008773,
+        "score_sum": 301861.9607443095,
+        "repetition": 2,
+        "process_seconds": 0.6727288000038243
+      },
+      {
+        "method": "original_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.4992822999993223,
+        "score_sum": 301861.9607443095,
+        "repetition": 3,
+        "process_seconds": 0.6682471000021906
+      },
+      {
+        "method": "original_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.4998206000018399,
+        "score_sum": 301861.9607443095,
+        "repetition": 4,
+        "process_seconds": 0.6632102000003215
+      },
+      {
+        "method": "original_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.4969072000021697,
+        "score_sum": 301861.9607443095,
+        "repetition": 5,
+        "process_seconds": 0.6683905000027153
+      },
+      {
+        "method": "original_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.5026951000036206,
+        "score_sum": 301861.9607443095,
+        "repetition": 6,
+        "process_seconds": 0.6651672000007238
+      },
+      {
+        "method": "original_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.49672260000079405,
+        "score_sum": 301861.9607443095,
+        "repetition": 7,
+        "process_seconds": 0.6620426000008592
+      }
+    ],
+    "attention_only": [
+      {
+        "method": "attention_only",
+        "architectures": 100,
+        "scoring_seconds": 0.4978992000033031,
+        "score_sum": 294229.1723716229,
+        "repetition": 1,
+        "process_seconds": 0.6718992999958573
+      },
+      {
+        "method": "attention_only",
+        "architectures": 100,
+        "scoring_seconds": 0.49921960000210674,
+        "score_sum": 294229.1723716229,
+        "repetition": 2,
+        "process_seconds": 0.668614099995466
+      },
+      {
+        "method": "attention_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5015287999995053,
+        "score_sum": 294229.1723716229,
+        "repetition": 3,
+        "process_seconds": 0.6534003999986453
+      },
+      {
+        "method": "attention_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5003352999992785,
+        "score_sum": 294229.1723716229,
+        "repetition": 4,
+        "process_seconds": 0.6654355999999098
+      },
+      {
+        "method": "attention_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5053951000008965,
+        "score_sum": 294229.1723716229,
+        "repetition": 5,
+        "process_seconds": 0.6623223999995389
+      },
+      {
+        "method": "attention_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5008976999961305,
+        "score_sum": 294229.1723716229,
+        "repetition": 6,
+        "process_seconds": 0.6702884999976959
+      },
+      {
+        "method": "attention_only",
+        "architectures": 100,
+        "scoring_seconds": 0.4980901000017184,
+        "score_sum": 294229.1723716229,
+        "repetition": 7,
+        "process_seconds": 0.67269479999959
+      }
+    ],
+    "ffn_only": [
+      {
+        "method": "ffn_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5003668000063044,
+        "score_sum": 275581.44746809703,
+        "repetition": 1,
+        "process_seconds": 0.6588738999998895
+      },
+      {
+        "method": "ffn_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5021494999964489,
+        "score_sum": 275581.44746809703,
+        "repetition": 2,
+        "process_seconds": 0.6589344000021811
+      },
+      {
+        "method": "ffn_only",
+        "architectures": 100,
+        "scoring_seconds": 0.49883930000214605,
+        "score_sum": 275581.44746809703,
+        "repetition": 3,
+        "process_seconds": 0.6614215000008699
+      },
+      {
+        "method": "ffn_only",
+        "architectures": 100,
+        "scoring_seconds": 0.500126500002807,
+        "score_sum": 275581.44746809703,
+        "repetition": 4,
+        "process_seconds": 0.6654865000018617
+      },
+      {
+        "method": "ffn_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5046287000004668,
+        "score_sum": 275581.44746809703,
+        "repetition": 5,
+        "process_seconds": 0.6696120999986306
+      },
+      {
+        "method": "ffn_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5013322000013432,
+        "score_sum": 275581.44746809703,
+        "repetition": 6,
+        "process_seconds": 0.6598212000026251
+      },
+      {
+        "method": "ffn_only",
+        "architectures": 100,
+        "scoring_seconds": 0.5012975999998162,
+        "score_sum": 275581.44746809703,
+        "repetition": 7,
+        "process_seconds": 0.6683358000009321
+      }
+    ],
+    "matrix_wise": [
+      {
+        "method": "matrix_wise",
+        "architectures": 100,
+        "scoring_seconds": 0.5034457000001566,
+        "score_sum": 264553.0725720892,
+        "repetition": 1,
+        "process_seconds": 0.6796910999983083
+      },
+      {
+        "method": "matrix_wise",
+        "architectures": 100,
+        "scoring_seconds": 0.5018538999938755,
+        "score_sum": 264553.0725720892,
+        "repetition": 2,
+        "process_seconds": 0.6820555000012973
+      },
+      {
+        "method": "matrix_wise",
+        "architectures": 100,
+        "scoring_seconds": 0.5000809000048321,
+        "score_sum": 264553.0725720892,
+        "repetition": 3,
+        "process_seconds": 0.6743688999995356
+      },
+      {
+        "method": "matrix_wise",
+        "architectures": 100,
+        "scoring_seconds": 0.5053840999971726,
+        "score_sum": 264553.0725720892,
+        "repetition": 4,
+        "process_seconds": 0.7094627999977092
+      },
+      {
+        "method": "matrix_wise",
+        "architectures": 100,
+        "scoring_seconds": 0.5026283000042895,
+        "score_sum": 264553.0725720892,
+        "repetition": 5,
+        "process_seconds": 0.6787102000016603
+      },
+      {
+        "method": "matrix_wise",
+        "architectures": 100,
+        "scoring_seconds": 0.5007677999965381,
+        "score_sum": 264553.0725720892,
+        "repetition": 6,
+        "process_seconds": 0.6681731999997282
+      },
+      {
+        "method": "matrix_wise",
+        "architectures": 100,
+        "scoring_seconds": 0.5038589999967371,
+        "score_sum": 264553.0725720892,
+        "repetition": 7,
+        "process_seconds": 0.6820904000051087
+      }
+    ],
+    "pb_nsc": [
+      {
+        "method": "pb_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.5032754999992903,
+        "score_sum": 267948.65909541043,
+        "repetition": 1,
+        "process_seconds": 0.6664681000038399
+      },
+      {
+        "method": "pb_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.5051444000055199,
+        "score_sum": 267948.65909541043,
+        "repetition": 2,
+        "process_seconds": 0.6603020999973523
+      },
+      {
+        "method": "pb_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.504939700003888,
+        "score_sum": 267948.65909541043,
+        "repetition": 3,
+        "process_seconds": 0.6630557000025874
+      },
+      {
+        "method": "pb_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.49903440000343835,
+        "score_sum": 267948.65909541043,
+        "repetition": 4,
+        "process_seconds": 0.6610603000008268
+      },
+      {
+        "method": "pb_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.5027477999974508,
+        "score_sum": 267948.65909541043,
+        "repetition": 5,
+        "process_seconds": 0.6675044000003254
+      },
+      {
+        "method": "pb_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.5006139999968582,
+        "score_sum": 267948.65909541043,
+        "repetition": 6,
+        "process_seconds": 0.6578855999978259
+      },
+      {
+        "method": "pb_nsc",
+        "architectures": 100,
+        "scoring_seconds": 0.5020363000003272,
+        "score_sum": 267948.65909541043,
+        "repetition": 7,
+        "process_seconds": 0.6582531000021845
+      }
+    ]
+  }
+}

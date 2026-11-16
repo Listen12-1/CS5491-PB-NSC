@@ -1,0 +1,143 @@
+{
+  "split": "development",
+  "note": "Descriptive counts over overlapping changed pairs; not independent samples or causal evidence. Layer means summarize heterogeneous configurations.",
+  "skipped_changed_pairs_with_ties": 0,
+  "subsets": {
+    "all_changed_pairs": {
+      "changed_pairs": 99,
+      "corrected": 73,
+      "worsened": 26,
+      "net_corrected": 47,
+      "patterns": {
+        "corrected": {
+          "pairs": 73,
+          "mean_heads": {
+            "promoted_lower": 38,
+            "equal": 1,
+            "promoted_higher": 34
+          },
+          "mean_ffn_ratio": {
+            "promoted_lower": 73,
+            "equal": 0,
+            "promoted_higher": 0
+          }
+        },
+        "worsened": {
+          "pairs": 26,
+          "mean_heads": {
+            "promoted_lower": 9,
+            "equal": 0,
+            "promoted_higher": 17
+          },
+          "mean_ffn_ratio": {
+            "promoted_lower": 26,
+            "equal": 0,
+            "promoted_higher": 0
+          }
+        }
+      }
+    },
+    "same_width_changed_pairs": {
+      "changed_pairs": 15,
+      "corrected": 9,
+      "worsened": 6,
+      "net_corrected": 3,
+      "patterns": {
+        "corrected": {
+          "pairs": 9,
+          "mean_heads": {
+            "promoted_lower": 8,
+            "equal": 0,
+            "promoted_higher": 1
+          },
+          "mean_ffn_ratio": {
+            "promoted_lower": 9,
+            "equal": 0,
+            "promoted_higher": 0
+          }
+        },
+        "worsened": {
+          "pairs": 6,
+          "mean_heads": {
+            "promoted_lower": 4,
+            "equal": 0,
+            "promoted_higher": 2
+          },
+          "mean_ffn_ratio": {
+            "promoted_lower": 6,
+            "equal": 0,
+            "promoted_higher": 0
+          }
+        }
+      }
+    },
+    "different_width_changed_pairs": {
+      "changed_pairs": 84,
+      "corrected": 64,
+      "worsened": 20,
+      "net_corrected": 44,
+      "patterns": {
+        "corrected": {
+          "pairs": 64,
+          "mean_heads": {
+            "promoted_lower": 30,
+            "equal": 1,
+            "promoted_higher": 33
+          },
+          "mean_ffn_ratio": {
+            "promoted_lower": 64,
+            "equal": 0,
+            "promoted_higher": 0
+          }
+        },
+        "worsened": {
+          "pairs": 20,
+          "mean_heads": {
+            "promoted_lower": 5,
+            "equal": 0,
+            "promoted_higher": 15
+          },
+          "mean_ffn_ratio": {
+            "promoted_lower": 20,
+            "equal": 0,
+            "promoted_higher": 0
+          }
+        }
+      }
+    },
+    "size_controlled_changed_pairs": {
+      "changed_pairs": 3,
+      "corrected": 2,
+      "worsened": 1,
+      "net_corrected": 1,
+      "patterns": {
+        "corrected": {
+          "pairs": 2,
+          "mean_heads": {
+            "promoted_lower": 2,
+            "equal": 0,
+            "promoted_higher": 0
+          },
+          "mean_ffn_ratio": {
+            "promoted_lower": 2,
+            "equal": 0,
+            "promoted_higher": 0
+          }
+        },
+        "worsened": {
+          "pairs": 1,
+          "mean_heads": {
+            "promoted_lower": 0,
+            "equal": 0,
+            "promoted_higher": 1
+          },
+          "mean_ffn_ratio": {
+            "promoted_lower": 1,
+            "equal": 0,
+            "promoted_higher": 0
+          }
+        }
+      }
+    }
+  }
+}

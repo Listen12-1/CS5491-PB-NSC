@@ -1,0 +1,458 @@
+{
+  "split": "development",
+  "analysis": "within-hidden-width ranking",
+  "groups": [
+    {
+      "hidden_width": 64,
+      "architectures": 25,
+      "all_pair_count": 300,
+      "size_controlled_pair_count": 44,
+      "methods": {
+        "original_nsc": {
+          "spearman_rho": 0.9823076923076923,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 289,
+            "discordant": 11,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9266666666666666
+          },
+          "size_controlled_pairs": {
+            "pairs": 44,
+            "concordant": 43,
+            "discordant": 1,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9545454545454546
+          }
+        },
+        "attention_only": {
+          "spearman_rho": 0.9807692307692307,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 288,
+            "discordant": 12,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.92
+          },
+          "size_controlled_pairs": {
+            "pairs": 44,
+            "concordant": 43,
+            "discordant": 1,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9545454545454546
+          }
+        },
+        "ffn_only": {
+          "spearman_rho": 0.9815384615384616,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 286,
+            "discordant": 14,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9066666666666666
+          },
+          "size_controlled_pairs": {
+            "pairs": 44,
+            "concordant": 42,
+            "discordant": 2,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9090909090909091
+          }
+        },
+        "matrix_wise": {
+          "spearman_rho": 0.9815384615384616,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 286,
+            "discordant": 14,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9066666666666666
+          },
+          "size_controlled_pairs": {
+            "pairs": 44,
+            "concordant": 42,
+            "discordant": 2,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9090909090909091
+          }
+        },
+        "pb_nsc": {
+          "spearman_rho": 0.9815384615384616,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 286,
+            "discordant": 14,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9066666666666666
+          },
+          "size_controlled_pairs": {
+            "pairs": 44,
+            "concordant": 42,
+            "discordant": 2,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.9090909090909091
+          }
+        }
+      }
+    },
+    {
+      "hidden_width": 128,
+      "architectures": 25,
+      "all_pair_count": 300,
+      "size_controlled_pair_count": 47,
+      "methods": {
+        "original_nsc": {
+          "spearman_rho": 0.9092307692307692,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 266,
+            "discordant": 34,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7733333333333333
+          },
+          "size_controlled_pairs": {
+            "pairs": 47,
+            "concordant": 39,
+            "discordant": 8,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.6595744680851063
+          }
+        },
+        "attention_only": {
+          "spearman_rho": 0.9092307692307692,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 266,
+            "discordant": 34,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7733333333333333
+          },
+          "size_controlled_pairs": {
+            "pairs": 47,
+            "concordant": 39,
+            "discordant": 8,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.6595744680851063
+          }
+        },
+        "ffn_only": {
+          "spearman_rho": 0.916923076923077,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 269,
+            "discordant": 31,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7933333333333333
+          },
+          "size_controlled_pairs": {
+            "pairs": 47,
+            "concordant": 40,
+            "discordant": 7,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7021276595744681
+          }
+        },
+        "matrix_wise": {
+          "spearman_rho": 0.9215384615384615,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 270,
+            "discordant": 30,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.8
+          },
+          "size_controlled_pairs": {
+            "pairs": 47,
+            "concordant": 41,
+            "discordant": 6,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7446808510638298
+          }
+        },
+        "pb_nsc": {
+          "spearman_rho": 0.916923076923077,
+          "all_pairs": {
+            "pairs": 300,
+            "concordant": 269,
+            "discordant": 31,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7933333333333333
+          },
+          "size_controlled_pairs": {
+            "pairs": 47,
+            "concordant": 40,
+            "discordant": 7,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7021276595744681
+          }
+        }
+      }
+    },
+    {
+      "hidden_width": 256,
+      "architectures": 26,
+      "all_pair_count": 325,
+      "size_controlled_pair_count": 49,
+      "methods": {
+        "original_nsc": {
+          "spearman_rho": 0.9487179487179487,
+          "all_pairs": {
+            "pairs": 325,
+            "concordant": 297,
+            "discordant": 28,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.8276923076923077
+          },
+          "size_controlled_pairs": {
+            "pairs": 49,
+            "concordant": 43,
+            "discordant": 6,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7551020408163265
+          }
+        },
+        "attention_only": {
+          "spearman_rho": 0.9452991452991453,
+          "all_pairs": {
+            "pairs": 325,
+            "concordant": 296,
+            "discordant": 29,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.8215384615384616
+          },
+          "size_controlled_pairs": {
+            "pairs": 49,
+            "concordant": 42,
+            "discordant": 7,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7142857142857143
+          }
+        },
+        "ffn_only": {
+          "spearman_rho": 0.9521367521367521,
+          "all_pairs": {
+            "pairs": 325,
+            "concordant": 298,
+            "discordant": 27,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.8338461538461538
+          },
+          "size_controlled_pairs": {
+            "pairs": 49,
+            "concordant": 43,
+            "discordant": 6,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7551020408163265
+          }
+        },
+        "matrix_wise": {
+          "spearman_rho": 0.9535042735042735,
+          "all_pairs": {
+            "pairs": 325,
+            "concordant": 297,
+            "discordant": 28,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.8276923076923077
+          },
+          "size_controlled_pairs": {
+            "pairs": 49,
+            "concordant": 43,
+            "discordant": 6,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7551020408163265
+          }
+        },
+        "pb_nsc": {
+          "spearman_rho": 0.9548717948717949,
+          "all_pairs": {
+            "pairs": 325,
+            "concordant": 299,
+            "discordant": 26,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.84
+          },
+          "size_controlled_pairs": {
+            "pairs": 49,
+            "concordant": 44,
+            "discordant": 5,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7959183673469388
+          }
+        }
+      }
+    },
+    {
+      "hidden_width": 512,
+      "architectures": 24,
+      "all_pair_count": 276,
+      "size_controlled_pair_count": 40,
+      "methods": {
+        "original_nsc": {
+          "spearman_rho": 0.8921739130434783,
+          "all_pairs": {
+            "pairs": 276,
+            "concordant": 239,
+            "discordant": 37,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7318840579710145
+          },
+          "size_controlled_pairs": {
+            "pairs": 40,
+            "concordant": 21,
+            "discordant": 19,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.05
+          }
+        },
+        "attention_only": {
+          "spearman_rho": 0.8921739130434783,
+          "all_pairs": {
+            "pairs": 276,
+            "concordant": 240,
+            "discordant": 36,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7391304347826086
+          },
+          "size_controlled_pairs": {
+            "pairs": 40,
+            "concordant": 21,
+            "discordant": 19,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.05
+          }
+        },
+        "ffn_only": {
+          "spearman_rho": 0.8921739130434783,
+          "all_pairs": {
+            "pairs": 276,
+            "concordant": 239,
+            "discordant": 37,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7318840579710145
+          },
+          "size_controlled_pairs": {
+            "pairs": 40,
+            "concordant": 21,
+            "discordant": 19,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.05
+          }
+        },
+        "matrix_wise": {
+          "spearman_rho": 0.8921739130434783,
+          "all_pairs": {
+            "pairs": 276,
+            "concordant": 240,
+            "discordant": 36,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7391304347826086
+          },
+          "size_controlled_pairs": {
+            "pairs": 40,
+            "concordant": 21,
+            "discordant": 19,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.05
+          }
+        },
+        "pb_nsc": {
+          "spearman_rho": 0.8921739130434783,
+          "all_pairs": {
+            "pairs": 276,
+            "concordant": 240,
+            "discordant": 36,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.7391304347826086
+          },
+          "size_controlled_pairs": {
+            "pairs": 40,
+            "concordant": 21,
+            "discordant": 19,
+            "score_only_ties": 0,
+            "quality_only_ties": 0,
+            "both_ties": 0,
+            "tau_b": 0.05
+          }
+        }
+      }
+    }
+  ]
+}
