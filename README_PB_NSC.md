@@ -120,7 +120,7 @@ before rerunning if the originals should be preserved.
 - All five scoring methods take approximately 0.5 seconds per batch of
   100 development architectures on the recorded laptop.
 
-See development_summary.md and the result files for details.
+See the development result JSON and CSV files in this repository for details.
 
 ## Approximate runtime
 
