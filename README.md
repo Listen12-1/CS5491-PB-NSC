@@ -1,3 +1,12 @@
+# CS5491 Group G047 — Path-Balanced NSC
+
+For our method, reproduction commands and development results, see
+[PB-NSC project documentation](README_PB_NSC.md).
+
+The original course-starter documentation is preserved below.
+
+---
+
 # NSC course-project starter — CS5491, 2026/27 Semester A
 
 A CPU-only experiment for studying an architecture heuristic. Python 3.9 or later; standard library only. No installation, API key, model download or training is needed for the core project.
