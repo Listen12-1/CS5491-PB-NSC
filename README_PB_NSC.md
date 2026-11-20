@@ -131,13 +131,27 @@ On the recorded laptop:
 
 Runtime varies by machine. Timing fields need not reproduce exactly.
 
-## Final evaluation status
+## Final evaluation status and protocol
 
 Final performance has not yet been evaluated in this workflow.
-The current analysis scripts are development-only.
 
-Freeze the method, evaluation choices and code revision before evaluating
-the final split. Do not tune the method using final outcomes.
+See [FINAL_PROTOCOL.md](FINAL_PROTOCOL.md) for the predefined methods,
+metrics, selection settings, bootstrap procedure and final commands.
+
+The analysis scripts now accept `--split development` or `--split final`.
+Omitting this option defaults to development.
+
+Development commands:
+
+```sh
+python analyze_width.py --split development
+python analyze_pair_changes.py --split development
+python bootstrap_development.py --split development
+```
+
+Record the freeze commit SHA before executing final evaluation.
+Do not tune scoring methods using final outcomes.
+
 
 ## References
 

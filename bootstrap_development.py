@@ -1,5 +1,6 @@
-"""Paired, width-stratified architecture bootstrap on development only."""
+"""Paired, width-stratified architecture bootstrap for a selected split."""
 
+import argparse
 import json
 import random
 import time
@@ -37,18 +38,19 @@ def percentile(values, probability):
     )
 
 
-def main():
+def main(split):
     started = time.perf_counter()
 
     configs = load_data("architectures.json")
     resources = load_data("resources.json")
-    labels = load_data("development_labels.json")
+    labels = load_data(f"{split}_labels.json")
+    label_key = "valid_ppl" if split == "development" else "test_ppl"
     splits = load_data("splits.json")
 
-    ids = splits["development"]
+    ids = splits[split]
     widths = [configs[key]["d_model"] for key in ids]
     parameters = [resources[key]["total"] for key in ids]
-    quality = [-labels[key]["valid_ppl"] for key in ids]
+    quality = [-labels[key][label_key] for key in ids]
 
     scorers = {
         "original_nsc": original_nsc,
@@ -201,7 +203,7 @@ def main():
                 print(f"  {metric}: no valid resamples")
 
     output = {
-        "split": "development",
+        "split": split,
         "bootstrap_unit": "architecture",
         "sampling": (
             "Paired sampling with replacement within hidden-width "
@@ -225,7 +227,7 @@ def main():
         ),
     }
 
-    output_path = ROOT / "bootstrap_development_results.json"
+    output_path = ROOT / f"bootstrap_{split}_results.json"
     output_path.write_text(
         json.dumps(output, indent=2, allow_nan=False),
         encoding="utf-8",
@@ -235,4 +237,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Paired architecture bootstrap for a selected split."
+    )
+    parser.add_argument(
+        "--split",
+        choices=["development", "final"],
+        default="development",
+        help="Dataset split; defaults to development.",
+    )
+    args = parser.parse_args()
+    main(args.split)

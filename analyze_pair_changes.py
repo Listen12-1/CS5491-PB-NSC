@@ -1,5 +1,6 @@
 """Inspect ranking changes on development architectures only."""
 
+import argparse
 import csv
 import json
 import statistics
@@ -19,7 +20,7 @@ def load_data(filename):
     )
 
 
-def architecture_info(arch_id, configs, resources, labels):
+def architecture_info(arch_id, configs, resources, labels, label_key):
     config = configs[arch_id]
     d, heads, inner = layers(config)
 
@@ -28,7 +29,7 @@ def architecture_info(arch_id, configs, resources, labels):
         "width": d,
         "depth": config["n_layer"],
         "parameters": resources[arch_id]["total"],
-        "ppl": labels[arch_id]["valid_ppl"],
+        "ppl": labels[arch_id][label_key],
         "mean_heads": statistics.mean(heads),
         "mean_ffn_ratio": statistics.mean(f / d for f in inner),
         "nsc": canonical(original_nsc(config)),
@@ -40,15 +41,18 @@ def compare(a, b):
     return (a > b) - (a < b)
 
 
-def main():
+def main(split):
     configs = load_data("architectures.json")
     resources = load_data("resources.json")
-    labels = load_data("development_labels.json")
+    labels = load_data(f"{split}_labels.json")
+    label_key = "valid_ppl" if split == "development" else "test_ppl"
     splits = load_data("splits.json")
 
     architectures = [
-        architecture_info(arch_id, configs, resources, labels)
-        for arch_id in splits["development"]
+        architecture_info(
+            arch_id, configs, resources, labels, label_key
+        )
+        for arch_id in splits[split]
     ]
 
     rows = []
@@ -118,7 +122,7 @@ def main():
         ]
     ]
 
-    csv_path = ROOT / "pair_changes_development.csv"
+    csv_path = ROOT / f"pair_changes_{split}.csv"
     with csv_path.open(
         "w", newline="", encoding="utf-8-sig"
     ) as file:
@@ -208,7 +212,7 @@ def main():
                 )
 
     output = {
-        "split": "development",
+        "split": split,
         "note": (
             "Descriptive counts over overlapping changed pairs; "
             "not independent samples or causal evidence. "
@@ -218,7 +222,7 @@ def main():
         "subsets": summaries,
     }
 
-    json_path = ROOT / "pair_changes_summary_development.json"
+    json_path = ROOT / f"pair_changes_summary_{split}.json"
     json_path.write_text(
         json.dumps(output, indent=2),
         encoding="utf-8",
@@ -230,4 +234,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Analyze pairwise ranking changes for PB-NSC."
+    )
+    parser.add_argument(
+        "--split",
+        choices=["development", "final"],
+        default="development",
+        help="Dataset split; defaults to development.",
+    )
+    args = parser.parse_args()
+    main(args.split)

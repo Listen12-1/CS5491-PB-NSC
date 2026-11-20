@@ -1,5 +1,6 @@
 """Compare development rankings within each hidden-width group."""
 
+import argparse
 import json
 from pathlib import Path
 
@@ -30,16 +31,17 @@ def load_data(filename):
     )
 
 
-def main():
+def main(split):
     configs = load_data("architectures.json")
     resources = load_data("resources.json")
     splits = load_data("splits.json")
-    labels = load_data("development_labels.json")
+    labels = load_data(f"{split}_labels.json")
+    label_key = "valid_ppl" if split == "development" else "test_ppl"
 
-    development_ids = splits["development"]
+    selected_ids = splits[split]
     widths = sorted({
         configs[arch_id]["d_model"]
-        for arch_id in development_ids
+        for arch_id in selected_ids
     })
 
     results = []
@@ -47,13 +49,13 @@ def main():
     for width in widths:
         ids = [
             arch_id
-            for arch_id in development_ids
+            for arch_id in selected_ids
             if configs[arch_id]["d_model"] == width
         ]
 
         # Larger negative PPL means better performance.
         quality = [
-            -labels[arch_id]["valid_ppl"]
+            -labels[arch_id][label_key]
             for arch_id in ids
         ]
 
@@ -123,12 +125,12 @@ def main():
         results.append(group)
 
     output = {
-        "split": "development",
+        "split": split,
         "analysis": "within-hidden-width ranking",
         "groups": results,
     }
 
-    output_path = ROOT / "width_analysis_development.json"
+    output_path = ROOT / f"width_analysis_{split}.json"
     output_path.write_text(
         json.dumps(output, indent=2, allow_nan=False),
         encoding="utf-8",
@@ -138,4 +140,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Analyze architecture rankings within hidden-width groups."
+    )
+    parser.add_argument(
+        "--split",
+        choices=["development", "final"],
+        default="development",
+        help="Dataset split; defaults to development.",
+    )
+    args = parser.parse_args()
+    main(args.split)
