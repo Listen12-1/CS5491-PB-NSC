@@ -133,25 +133,41 @@ Runtime varies by machine. Timing fields need not reproduce exactly.
 
 ## Final evaluation status and protocol
 
-Final performance has not yet been evaluated in this workflow.
+Final evaluation is complete. Methods were frozen before evaluating final
+outcomes at commit `04fd56967323d82eb9bce081e73b7e29a4045d03`.
+See [FINAL_PROTOCOL.md](FINAL_PROTOCOL.md) for the historical protocol;
+its pre-evaluation status text is retained as a historical record.
+See [FINAL_RESULTS.md](FINAL_RESULTS.md) for the numerical summary.
 
-See [FINAL_PROTOCOL.md](FINAL_PROTOCOL.md) for the predefined methods,
-metrics, selection settings, bootstrap procedure and final commands.
-
-The analysis scripts now accept `--split development` or `--split final`.
-Omitting this option defaults to development.
-
-Development commands:
+### Reproduce final results
 
 ```sh
-python analyze_width.py --split development
-python analyze_pair_changes.py --split development
-python bootstrap_development.py --split development
+python evaluate.py --split final --student pb_nsc_score.py --output pb_nsc_final.json
+python evaluate.py --split final --student score_attention_only.py --output attention_only_final.json
+python evaluate.py --split final --student score_ffn_only.py --output ffn_only_final.json
+python evaluate.py --split final --student score_matrix_wise.py --output matrix_wise_final.json
+python analyze_width.py --split final
+python analyze_pair_changes.py --split final
+python bootstrap_development.py --split final
 ```
 
-Record the freeze commit SHA before executing final evaluation.
-Do not tune scoring methods using final outcomes.
+These commands reproduce frozen analyses, without retuning. The bootstrap
+filename is historical; its --split option selects the dataset.
+Most commands take seconds; final bootstrap took about 13 seconds locally.
 
+### Regenerate summary tables without running experiments
+
+```sh
+python prepare_submission.py
+```
+
+This standard-library script reads saved evaluation JSON, backs up files
+before replacing them, updates documentation and exports three CSV tables
+under reports/. It does not call evaluation, read label files, change
+scoring code, or upload anything. Existing backups remain local.
+
+The pre-final freeze differs from the eventual graded final commit,
+which must also contain final results and submission materials.
 
 ## References
 
